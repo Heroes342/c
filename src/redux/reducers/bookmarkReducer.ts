@@ -10,15 +10,16 @@ const initialState: BookmarkProps = {
 };
 
 const bookmarkReducer = (state = initialState, action: BookmarkAction) => {
-
-
   switch (action.type) {
     case BOOKMARK_ACTIONS.ADD_BOOKMARK:
       return {
         ...state,
         bookmarks: [
           ...state.bookmarks.filter(
-            (item) => item.id.value+item.id.name !== (action.payload as Data).id.value+(action.payload as Data).id.name
+            (item) =>
+              item.id.value + item.id.name !==
+              (action.payload as Data).id.value +
+                (action.payload as Data).id.name
           ),
           action.payload,
         ],
@@ -28,7 +29,8 @@ const bookmarkReducer = (state = initialState, action: BookmarkAction) => {
         ...state,
         bookmarks: [
           ...state.bookmarks.filter(
-            (item) => item.id.value+item.id.name !== (action.payload as string)
+            (item) =>
+              item.id.value + item.id.name !== (action.payload as string)
           ),
         ],
       };

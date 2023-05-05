@@ -20,6 +20,7 @@ const Login: ScreenFC<"Login"> = ({ navigation }) => {
       />
       <TextInput
         style={styles.input}
+        secureTextEntry={true}
         placeholder="password"
         onChangeText={(value) => setPassword(value)}
       />

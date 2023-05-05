@@ -19,7 +19,9 @@ const HomePage: CustomScreenFC<"Home"> = ({ navigation }) => {
   }, []);
 
   const getData = async () => {
-    const response = await fetch("https://randomuser.me/api/?results=24&seed=contactgram&nat=us,fr,gb&exc=login,registered&noinfo");
+    const response = await fetch(
+      "https://randomuser.me/api/?results=24&seed=contactgram&nat=us,fr,gb&exc=login,registered&noinfo"
+    );
     const data = await response.json();
     const peopleMap = new Map<string, Data>();
     data.results.forEach((person: Data) => {

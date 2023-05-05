@@ -52,7 +52,7 @@ const accountReducer = (state = initialState, action: AccountAction) => {
         account: state,
       };
     case ACCOUNT_ACTIONS.EDIT_ACCOUNT:
-      if (action.payload.password === ""){
+      if (action.payload.password === "") {
         action.payload.password = state.account.password;
       }
       return {

@@ -1,4 +1,4 @@
-import { Data } from '../../models/Data';
+import { Data } from "../../models/Data";
 
 export interface BookmarkProps {
   bookmarks: Data[];
@@ -10,9 +10,9 @@ export interface BookmarkAction {
 }
 
 export enum BOOKMARK_ACTIONS {
-  ADD_BOOKMARK = 'ADD_BOOKMARK',
-  REMOVE_BOOKMARK = 'REMOVE_BOOKMARK',
-  REMOVE_ALL_BOOKMARK = 'REMOVE_ALL_BOOKMARK',
+  ADD_BOOKMARK = "ADD_BOOKMARK",
+  REMOVE_BOOKMARK = "REMOVE_BOOKMARK",
+  REMOVE_ALL_BOOKMARK = "REMOVE_ALL_BOOKMARK",
 }
 
 export const addBookmark = (bookmark: Data) => {

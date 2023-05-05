@@ -143,28 +143,27 @@ const DrawerMenu: React.FC = () => {
   };
   return (
     <>
-        <Drawer.Navigator
-          initialRouteName="Profile"
-          drawerContent={(props) => <CustomDrawerContent {...props} />}
-        >
-          <Drawer.Screen
-            name={ROUTES.Profile}
-            component={ProfileScreen}
-            options={{ headerShown: true }}
-          />
-          <Drawer.Screen
-            name={ROUTES.EditProfile}
-            component={EditProfileScreen}
-          />
-          <Drawer.Screen name={ROUTES.Info} component={InfoScreen} />
-          <Drawer.Screen name={ROUTES.Favorite} component={Favorites} />
-        </Drawer.Navigator>
+      <Drawer.Navigator
+        initialRouteName="Profile"
+        drawerContent={(props) => <CustomDrawerContent {...props} />}
+      >
+        <Drawer.Screen
+          name={ROUTES.Profile}
+          component={ProfileScreen}
+          options={{ headerShown: true }}
+        />
+        <Drawer.Screen
+          name={ROUTES.EditProfile}
+          component={EditProfileScreen}
+        />
+        <Drawer.Screen name={ROUTES.Info} component={InfoScreen} />
+        <Drawer.Screen name={ROUTES.Favorite} component={Favorites} />
+      </Drawer.Navigator>
     </>
   );
 };
 
 const HomeStack: React.FC = () => {
-  
   const { account } = useSelector(
     (state: { accountReducer: AccountProps }) => state.accountReducer
   );

@@ -3,10 +3,9 @@ import { View, Text, StyleSheet, Image, Linking } from "react-native";
 import { CustomScreenFC } from "../models/ScreenFC";
 import { useDispatch, useSelector } from "react-redux";
 import { Icon } from "react-native-elements";
-import { AccountProps} from "../redux/actions/accountActions";
+import { AccountProps } from "../redux/actions/accountActions";
 
 const ProfileScreen: CustomScreenFC<"Profile"> = ({ navigation }) => {
-
   const dispatch = useDispatch();
 
   const { account } = useSelector(
@@ -17,8 +16,8 @@ const ProfileScreen: CustomScreenFC<"Profile"> = ({ navigation }) => {
 
   useEffect(() => {
     setImage(account.image);
-  }, [account.image])
-  
+  }, [account.image]);
+
   const supportedURL = "https://google.com";
 
   const handlePress = async () => {
@@ -37,30 +36,38 @@ const ProfileScreen: CustomScreenFC<"Profile"> = ({ navigation }) => {
       <View style={styles.row}>
         <Icon name="user" color="white" type="font-awesome" />
         <Text style={styles.label}>Full name:</Text>
-        <Text style={styles.value}>
-          {account.name}
-        </Text>
+        <Text style={styles.value}>{account.name}</Text>
       </View>
-      {account.dob instanceof Date && (<View style={styles.row}>
-        <Icon name="calendar" color="white" type="font-awesome" />
-        <Text style={styles.label}>Date of birth:</Text>
-        <Text style={styles.value}>
-          {account.dob.toLocaleDateString()}
-        </Text>
-      </View>)}
-      
+      {account.dob instanceof Date && (
+        <View style={styles.row}>
+          <Icon name="calendar" color="white" type="font-awesome" />
+          <Text style={styles.label}>Date of birth:</Text>
+          <Text style={styles.value}>{account.dob.toLocaleDateString()}</Text>
+        </View>
+      )}
+
       <View style={styles.row}>
         <Icon name="map-marker" color="white" type="font-awesome" />
         <Text style={styles.label}>Location:</Text>
         <Text style={styles.value}>{account.city}</Text>
       </View>
       <View style={styles.row}>
-        <Icon name="envelope" color="white" onPress={handlePress} type="font-awesome" />
+        <Icon
+          name="envelope"
+          color="white"
+          onPress={handlePress}
+          type="font-awesome"
+        />
         <Text style={styles.label}>Email:</Text>
         <Text style={styles.value}>{account.email}</Text>
       </View>
       <View style={styles.row}>
-        <Icon name="phone" color="white" onPress={handlePress} type="font-awesome" />
+        <Icon
+          name="phone"
+          color="white"
+          onPress={handlePress}
+          type="font-awesome"
+        />
         <Text style={styles.label}>Phone:</Text>
         <Text style={styles.value}>{account.phone}</Text>
       </View>
@@ -112,6 +119,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 });
-
 
 export default ProfileScreen;

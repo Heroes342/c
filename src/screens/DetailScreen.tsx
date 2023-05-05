@@ -36,10 +36,10 @@ const DetailScreen: ScreenFC<"Detail"> = ({ route, navigation }) => {
   const handleToggleFavorite = () => {
     if (data) {
       if (isFavorite) {
-    dispatch(removeBookmark(data.id.value+data.id.name));
-  } else {
-    dispatch(addBookmark(data));
-  }
+        dispatch(removeBookmark(data.id.value + data.id.name));
+      } else {
+        dispatch(addBookmark(data));
+      }
     }
   };
 
@@ -66,12 +66,22 @@ const DetailScreen: ScreenFC<"Detail"> = ({ route, navigation }) => {
         <Text style={styles.value}>{data?.location.city}</Text>
       </View>
       <View style={styles.row}>
-        <Icon name="envelope" color="white" onPress={handlePress} type="font-awesome" />
+        <Icon
+          name="envelope"
+          color="white"
+          onPress={handlePress}
+          type="font-awesome"
+        />
         <Text style={styles.label}>Email:</Text>
         <Text style={styles.value}>{data?.email}</Text>
       </View>
       <View style={styles.row}>
-        <Icon name="phone" color="white" onPress={handlePress} type="font-awesome" />
+        <Icon
+          name="phone"
+          color="white"
+          onPress={handlePress}
+          type="font-awesome"
+        />
         <Text style={styles.label}>Phone:</Text>
         <Text style={styles.value}>{data?.phone}</Text>
       </View>
@@ -81,7 +91,12 @@ const DetailScreen: ScreenFC<"Detail"> = ({ route, navigation }) => {
         <Text style={styles.value}>{data?.nat}</Text>
       </View>
       <View style={styles.row}>
-        <Icon name="heart" color={isFavorite ? "red" : "gray"} onPress={handleToggleFavorite} type="font-awesome" />
+        <Icon
+          name="heart"
+          color={isFavorite ? "red" : "gray"}
+          onPress={handleToggleFavorite}
+          type="font-awesome"
+        />
       </View>
     </View>
   );

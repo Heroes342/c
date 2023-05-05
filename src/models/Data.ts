@@ -1,6 +1,6 @@
 export interface Data {
   id: {
-    name : string;
+    name: string;
     value: string;
   };
   name: {

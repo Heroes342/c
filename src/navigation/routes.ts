@@ -9,7 +9,7 @@ enum ROUTES {
   Login = "Login",
   SignUp = "SignUp",
   DrawerMenu = "DrawerMenu",
-  Info = "Info"
+  Info = "Info",
 }
 
 export default ROUTES;

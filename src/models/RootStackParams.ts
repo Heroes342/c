@@ -10,8 +10,8 @@ type RootStackParams = {
   HomeStack: undefined;
   Profile: undefined;
   Favorite: {
-    love: boolean,
-    bookmark: number
+    love: boolean;
+    bookmark: number;
   };
   EditProfile: undefined;
   Homepage: undefined;

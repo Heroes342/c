@@ -1,7 +1,11 @@
 import { Data } from "../../models/Data";
 
-export type Account = Record<"email" | "password" | "name" | "city" | "phone" | "nat" | "image", string> & Record<"dob", Date | null> &
-  Record<"isLogged", boolean>
+export type Account = Record<
+  "email" | "password" | "name" | "city" | "phone" | "nat" | "image",
+  string
+> &
+  Record<"dob", Date | null> &
+  Record<"isLogged", boolean>;
 
 export interface AccountProps {
   account: Account;
@@ -17,7 +21,7 @@ export enum ACCOUNT_ACTIONS {
   LOGIN_ACCOUNT = "LOGIN_ACCOUNT",
   LOGOUT_ACCOUNT = "LOGOUT_ACCOUNT",
   DELETE_ACCOUNT = "DELETE_ACCOUNT",
-  EDIT_ACCOUNT = "EDIT_ACCOUNT"
+  EDIT_ACCOUNT = "EDIT_ACCOUNT",
 }
 
 export const signUp = (account: Account) => {
@@ -46,7 +50,7 @@ export const logout = () => {
   };
 };
 
-export const deleteAccount = (account : Account) => {
+export const deleteAccount = (account: Account) => {
   return {
     type: ACCOUNT_ACTIONS.DELETE_ACCOUNT,
     payload: account.email,
