@@ -1,30 +1,40 @@
 {
   "expo": {
-    "name": "esame-lagona",
-    "slug": "esame-lagona",
+    "name": "React-Native-Exercises",
+    "slug": "rickandmortynative",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gabryzaga.ReactNativeExercises"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.gabryzaga.ReactNativeExercises"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9e0d43ce-c0d1-4178-a314-01bf34053d72"
+      }
+    },
+    "owner": "heroes342"
   }
 }
